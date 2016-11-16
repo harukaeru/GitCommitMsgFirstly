@@ -1,0 +1,8 @@
+#!/bin/sh
+MESSAGE_FILE=$(get_msg_by_branch);
+if [ -f $MESSAGE_FILE ];
+then
+    cat $MESSAGE_FILE;
+else
+    echo "No Commit Message File Exist ($MESSAGE_FILE)"
+fi

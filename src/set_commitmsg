@@ -1,0 +1,3 @@
+#!/bin/sh
+MESSAGE_FILE=$(get_msg_by_branch);
+echo $1 > $MESSAGE_FILE

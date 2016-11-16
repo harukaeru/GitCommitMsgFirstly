@@ -1,0 +1,14 @@
+templateSource="$postCommitSource/commitmessage_firstly/post-commit"
+topLevel=$(show_top_level)
+path="$topLevel/.git/hooks/post-commit"
+if [ -f $path ];
+then
+    if [ -s $path ];
+    then
+        diff $templateSource $path && echo 'OK' || echo 'Edited post-commit file exists';
+    else
+        cp $templateSource $path && echo 'OK'
+    fi
+else
+    cp $templateSource $path && echo 'OK'
+fi
