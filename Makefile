@@ -23,5 +23,6 @@ clean:
 	rm $(BINDIR)/set_commitmsg
 	rm $(BINDIR)/show_current_commit_msg
 	rm $(BINDIR)/add_post_commit_hooks
+	rm $(BINDIR)/check_post-commit
 	rm -rf $(LIBDIR)/commitmessage_firstly
 	rm -rf build/
