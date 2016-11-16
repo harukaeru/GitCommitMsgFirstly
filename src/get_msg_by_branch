@@ -1,4 +1,6 @@
 #!/bin/sh
 branchValue=$(git rev-parse --abbrev-ref HEAD 2> /dev/null);
 topLevel=$(show_top_level);
+check_post-commit || exit 1
+
 echo "$topLevel"/.git/MY_MSG_"$branchValue"

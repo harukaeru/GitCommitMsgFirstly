@@ -1,0 +1,15 @@
+#!/bin/sh
+topLevel=$(show_top_level);
+postCommit="$topLevel/.git/hooks/post-commit"
+if [ -f $postCommit ];
+then
+    cat $postCommit | grep 'MESSAGE_FILE=$(' > /dev/null
+    if [ $? == 1 ];
+    then
+        echo 'You must run "add_post_commit_hooks"'
+        exit 1
+    fi
+else
+    echo 'You must run "add_post_commit_hooks"'
+    exit 1
+fi

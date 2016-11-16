@@ -9,6 +9,7 @@ install:
 	cp src/git_commit_from_msg $(BINDIR)/git_commit_from_msg
 	cp src/set_commitmsg $(BINDIR)/set_commitmsg
 	cp src/show_current_commit_msg $(BINDIR)/show_current_commit_msg
+	cp src/check_post-commit $(BINDIR)/check_post-commit
 	echo "postCommitSource=$(LIBDIR)" > src/libpath
 	cat src/shebang src/libpath src/hooks > build/add_post_commit_hooks
 	chmod +x build/add_post_commit_hooks

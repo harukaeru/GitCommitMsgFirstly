@@ -1,5 +1,6 @@
 #!/bin/sh
-MESSAGE_FILE=$(get_msg_by_branch);
+check_post-commit || exit 1
+MESSAGE_FILE=$(get_msg_by_branch)
 if [ -f $MESSAGE_FILE ];
 then
     cat $MESSAGE_FILE;
